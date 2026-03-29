@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Payment</title>
+  <link rel="stylesheet" href="payment.css"/>
+</head>
+
+<body>
+
+<div class="header">
+  <button class="back-btn" onclick="history.back()">&#8249;</button>
+  <span class="header-title">Payment</span>
+</div>
+
+<div class="main-card">
+
+  <div class="amount-box">
+
+    <div class="bill-header">
+      <div class="match-name" id="match-name">Mumbai vs Kolkata</div>
+      <div class="bill-price" id="total-amount">₹0.00</div>
+    </div>
+
+    <div class="bill-sub" id="amount-seats">1 Ticket</div>
+
+    <div class="bill-divider"></div>
+
+    <div class="bill-row">
+      <span>Date & Time</span>
+      <span id="match-date">29 Mar, 07:30 PM</span>
+    </div>
+
+    <div class="bill-row">
+      <span>Venue</span>
+      <span id="match-venue">Wankhede Stadium</span>
+    </div>
+
+    <div class="bill-row">
+      <span>Seats</span>
+      <span id="seat-names">A1, A2</span>
+    </div>
+
+    <div class="bill-divider"></div>
+
+    <div class="bill-total">
+      <span>Total</span>
+      <span id="bottom-total">₹0.00</span>
+    </div>
+
+  </div>
+
+  <div class="options">
+
+    <div class="option-title">PAY USING UPI</div>
+
+    <a href="#" id="any-upi-link" class="payment-option" style="text-decoration: none; color: inherit;">
+      <div class="left">
+        <img src="../assets/qr/UPI-Logo.png"/>
+        <span>Any UPI App</span>
+      </div>
+      <div class="arrow">&#8250;</div>
+    </a>
+
+    <a href="#" id="phonepe-link" class="payment-option" style="text-decoration: none; color: inherit;">
+      <div class="left">
+        <img src="../assets/qr/phonepay.png"/>
+        <span>PhonePe</span>
+      </div>
+      <div class="arrow">&#8250;</div>
+    </a>
+
+    <a href="#" id="gpay-link" class="payment-option" style="text-decoration: none; color: inherit;">
+      <div class="left">
+        <img src="../assets/qr/googlepay.png"/>
+        <span>Google Pay</span>
+      </div>
+      <div class="arrow">&#8250;</div>
+    </a>
+
+    <a href="#" id="paytm-link" class="payment-option" style="text-decoration: none; color: inherit;">
+      <div class="left">
+        <img src="../assets/qr/paytm.png"/>
+        <span>Paytm</span>
+      </div>
+      <div class="arrow">&#8250;</div>
+    </a>
+
+    <a href="#" id="amazon-link" class="payment-option" style="text-decoration: none; color: inherit;">
+      <div class="left">
+        <img src="../assets/qr/amzonepay.png"/>
+        <span>Amazon Pay</span>
+      </div>
+      <div class="arrow">&#8250;</div>
+    </a>
+
+  </div>
+
+</div>
+
+<div class="upi-box">
+  <div class="upi-label">UPI ID</div>
+  <div class="upi-row">
+    <span id="upi-id">Loading...</span>
+    <button id="copy-btn">COPY</button>
+  </div>
+</div>
+
+<div class="utr-box">
+  <div class="utr-label">Enter UTR Number</div>
+
+  <input type="text" id="utr-input" placeholder="Enter 12 digit UTR"/>
+
+  <div id="utr-error" class="utr-error"></div>
+
+  <button id="submit-btn" class="submit-btn" disabled>
+    Submit
+  </button>
+</div>
+
+<div class="modal-overlay" id="success-modal">
+  <div class="modal-box">
+    <div class="modal-icon">✔</div>
+    <div class="modal-title">Booking in progress</div>
+    <div class="modal-msg">
+      Please check your email <span id="modal-email"></span><br>
+      Confirmation will be sent within 15 minutes.
+    </div>
+    <button id="modal-ok-btn" class="modal-btn">OK</button>
+  </div>
+</div>
+
+<div class="secure-row">
+
+  <div class="secure-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#9aa5b1" stroke-width="2">
+      <rect x="3" y="11" width="18" height="10" rx="2"/>
+      <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+    </svg>
+    <div class="text">100% SAFE</div>
+  </div>
+
+  <div class="secure-center">
+    <img src="../assets/qr/securepayment.png"/>
+  </div>
+
+  <div class="secure-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#9aa5b1" stroke-width="2">
+      <path d="M20 6L9 17l-5-5"/>
+    </svg>
+    <div class="text">VERIFIED</div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <img src="../assets/logo/blacklogo.png" class="footer-logo"/>
+
+  <div class="note">
+    <ol>
+      <li>Tickets once booked cannot be cancelled.</li>
+      <li>Payment is non-refundable.</li>
+      <li>Do not refresh during payment.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="page-loader" id="page-loader">
+  <div class="loader-spinner"></div>
+</div>
+
+<script type="module" src="payment.js"></script>
+
+</body>
+</html>
